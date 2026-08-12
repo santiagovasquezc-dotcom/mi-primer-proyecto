@@ -1,0 +1,274 @@
+/* ========================================
+   COLORES DEL PROYECTO - TERRA PSCJ
+   ======================================== */
+
+:root {
+  --verde: #1B6B4A;
+  --verde-oscuro: #104832;
+  --azul: #14406B;
+  --azul-oscuro: #0B2E4F;
+  --negro: #111111;
+  --blanco: #ffffff;
+}
+
+/* ========================================
+   CONFIGURACIÓN GENERAL
+   ======================================== */
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--negro);
+  background-color: var(--blanco);
+  margin: 0;
+}
+
+/* ========================================
+   PORTADA
+   ======================================== */
+
+.hero {
+  min-height: 75vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      rgba(17, 17, 17, .75),
+      rgba(20, 64, 107, .65)
+    ),
+    url("../img/servicio-1.jpg")
+    center/cover no-repeat;
+
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  color: var(--verde);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.hero .lead {
+  font-size: 1.5rem;
+  color: var(--blanco);
+}
+
+/* ========================================
+   SECCIONES
+   ======================================== */
+
+.section {
+  padding: 70px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-title h2 {
+  font-weight: 800;
+  color: var(--negro);
+}
+
+.section-title h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background-color: var(--verde);
+  margin: 12px auto 0;
+  border-radius: 5px;
+}
+
+/* ========================================
+   TARJETAS DE SERVICIOS
+   ======================================== */
+
+.service-card {
+  height: 100%;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  background-color: var(--blanco);
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .12);
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+
+  border-color: var(--verde);
+
+  box-shadow:
+    0 10px 30px rgba(20, 64, 107, .20);
+}
+
+/* ICONOS DE LAS TARJETAS */
+
+.service-card i {
+  color: var(--verde) !important;
+}
+
+/* TÍTULOS DE LAS TARJETAS */
+
+.service-card h3 {
+  color: var(--azul);
+  font-weight: 700;
+}
+
+/* TEXTO DE LAS TARJETAS */
+
+.service-card p {
+  color: var(--negro);
+}
+
+/* ========================================
+   PRECIOS
+   ======================================== */
+
+.price {
+  color: var(--verde);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+/* ========================================
+   BOTONES
+   ======================================== */
+
+.btn-primary {
+  background-color: var(--azul);
+  border-color: var(--azul);
+  color: var(--blanco);
+
+  font-weight: 600;
+
+  transition:
+    background-color .2s ease,
+    border-color .2s ease,
+    transform .2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--verde);
+  border-color: var(--verde);
+  color: var(--blanco);
+
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   BOTÓN WHATSAPP
+   ======================================== */
+
+#botonWhatsApp {
+  background-color: var(--verde);
+  border-color: var(--verde);
+  color: var(--blanco);
+}
+
+#botonWhatsApp:hover {
+  background-color: var(--verde-oscuro);
+  border-color: var(--verde-oscuro);
+}
+
+/* ========================================
+   PIE DE PÁGINA
+   ======================================== */
+
+.footer {
+  background-color: var(--negro);
+  color: var(--blanco);
+  padding: 30px 20px;
+}
+
+.footer h3,
+.footer h4 {
+  color: var(--verde);
+}
+
+.footer a {
+  color: var(--blanco);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--verde);
+}
+
+/* ========================================
+   INFORMACIÓN DE CONTACTO
+   ======================================== */
+
+.contact-info {
+  background-color: var(--azul);
+  color: var(--blanco);
+  padding: 30px;
+  border-radius: 16px;
+}
+
+.contact-info h2,
+.contact-info h3 {
+  color: var(--verde);
+}
+
+.contact-info p {
+  color: var(--blanco);
+}
+
+/* ========================================
+   REDES SOCIALES
+   ======================================== */
+
+.social-link {
+  color: var(--azul);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  color: var(--verde);
+}
+
+/* ========================================
+   IMÁGENES
+   ======================================== */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========================================
+   RESPONSIVE - CELULARES
+   ======================================== */
+
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 65vh;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero .lead {
+    font-size: 1.2rem;
+  }
+
+  .section {
+    padding: 50px 15px;
+  }
+
+}

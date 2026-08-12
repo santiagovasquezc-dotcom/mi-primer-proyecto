@@ -1,10 +1,2109 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Mi primer repositorio</title>
-  </head>
-  <body>
-    <h1>Hola, soy santiago vasquez</h1>
-    <p>Estudiante de Programación de Software y Contenidos Digitales.</p>
-  </body>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TERRA PSCJ | Inmobiliaria</title>
+
+  <!-- FUENTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+
+  <style>
+
+    /* ==================================================
+       PALETA TERRA PSCJ
+       ================================================== */
+
+    :root {
+
+      --negro: #080B0A;
+
+      --negro-azul: #0B1720;
+
+      --azul: #103E63;
+
+      --azul-oscuro: #082A45;
+
+      --verde: #176B4D;
+
+      --verde-oscuro: #0D3F2F;
+
+      --gris: #AEB8B3;
+
+      --gris-oscuro: #65716C;
+
+      --borde: rgba(174,184,179,0.16);
+
+      --radio: 8px;
+
+    }
+
+
+    /* ==================================================
+       GENERAL
+       ================================================== */
+
+    * {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+
+    body {
+
+      background: var(--negro);
+
+      color: var(--gris);
+
+      font-family: 'Work Sans', sans-serif;
+
+      line-height: 1.6;
+
+    }
+
+
+    h1,
+    h2,
+    h3 {
+
+      font-family: 'Fraunces', serif;
+
+      color: var(--gris);
+
+      font-weight: 600;
+
+    }
+
+
+    a {
+
+      text-decoration: none;
+
+      color: inherit;
+
+    }
+
+
+    img {
+
+      width: 100%;
+
+      display: block;
+
+    }
+
+
+    .wrap {
+
+      max-width: 1200px;
+
+      margin: auto;
+
+      padding: 0 30px;
+
+    }
+
+
+    .mono {
+
+      font-family: 'JetBrains Mono', monospace;
+
+      font-size: .7rem;
+
+      letter-spacing: .08em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    /* ==================================================
+       NAVBAR
+       ================================================== */
+
+    header {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 100;
+
+      background: rgba(8,11,10,.94);
+
+      backdrop-filter: blur(10px);
+
+      border-bottom: 1px solid var(--borde);
+
+    }
+
+
+    nav {
+
+      max-width: 1200px;
+
+      margin: auto;
+
+      padding: 18px 30px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+    }
+
+
+    .logo {
+
+      font-family: 'Fraunces', serif;
+
+      font-size: 1.5rem;
+
+      font-weight: 700;
+
+      color: var(--gris);
+
+    }
+
+
+    .logo span {
+
+      color: var(--verde);
+
+      font-family: 'JetBrains Mono', monospace;
+
+      font-size: .65rem;
+
+      margin-left: 6px;
+
+    }
+
+
+    .nav-links {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 30px;
+
+    }
+
+
+    .nav-links a {
+
+      color: var(--gris);
+
+      font-size: .85rem;
+
+      font-weight: 600;
+
+      transition: .2s;
+
+    }
+
+
+    .nav-links a:hover {
+
+      color: var(--verde);
+
+    }
+
+
+    .nav-cta {
+
+      background: var(--verde);
+
+      padding: 10px 18px;
+
+      border-radius: var(--radio);
+
+      color: var(--gris) !important;
+
+    }
+
+
+    .nav-cta:hover {
+
+      background: var(--azul);
+
+    }
+
+
+    .burger {
+
+      display: none;
+
+      background: none;
+
+      border: none;
+
+    }
+
+
+    .burger span {
+
+      display: block;
+
+      width: 23px;
+
+      height: 3px;
+
+      margin: 5px;
+
+      background: var(--verde);
+
+    }
+
+
+    /* ==================================================
+       HERO
+       ================================================== */
+
+    .hero {
+
+      min-height: 88vh;
+
+      display: flex;
+
+      align-items: center;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+
+        linear-gradient(
+
+          120deg,
+
+          rgba(8,11,10,.95),
+
+          rgba(8,42,69,.82),
+
+          rgba(13,63,47,.65)
+
+        ),
+
+        url("img/portada.jpg")
+
+        center/cover no-repeat;
+
+    }
+
+
+    .hero::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+
+        linear-gradient(
+
+          90deg,
+
+          rgba(8,11,10,.95),
+
+          transparent
+
+        );
+
+    }
+
+
+    .hero-inner {
+
+      position: relative;
+
+      z-index: 2;
+
+    }
+
+
+    .eyebrow {
+
+      color: var(--verde);
+
+      margin-bottom: 22px;
+
+    }
+
+
+    .hero h1 {
+
+      font-size: clamp(3rem,7vw,5.5rem);
+
+      max-width: 800px;
+
+      line-height: 1.02;
+
+      color: var(--gris);
+
+    }
+
+
+    .hero h1 em {
+
+      color: var(--verde);
+
+      font-style: italic;
+
+    }
+
+
+    .hero .lead {
+
+      max-width: 650px;
+
+      margin-top: 25px;
+
+      font-size: 1.08rem;
+
+      color: var(--gris);
+
+    }
+
+
+    .hero-actions {
+
+      display: flex;
+
+      gap: 15px;
+
+      margin-top: 35px;
+
+      flex-wrap: wrap;
+
+    }
+
+
+    .btn {
+
+      padding: 14px 25px;
+
+      border-radius: var(--radio);
+
+      font-size: .88rem;
+
+      font-weight: 600;
+
+      border: 1px solid transparent;
+
+      transition: .2s;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+    }
+
+
+    .btn-primary {
+
+      background: var(--verde);
+
+      color: var(--gris);
+
+    }
+
+
+    .btn-primary:hover {
+
+      background: var(--azul);
+
+      transform: translateY(-2px);
+
+    }
+
+
+    .btn-outline {
+
+      border-color: var(--azul);
+
+      color: var(--gris);
+
+    }
+
+
+    .btn-outline:hover {
+
+      background: var(--azul);
+
+    }
+
+
+    .hero-stats {
+
+      display: flex;
+
+      gap: 50px;
+
+      margin-top: 65px;
+
+      padding-top: 25px;
+
+      border-top: 1px solid var(--borde);
+
+      flex-wrap: wrap;
+
+    }
+
+
+    .hero-stats .num {
+
+      font-family: 'Fraunces', serif;
+
+      font-size: 1.8rem;
+
+      color: var(--verde);
+
+    }
+
+
+    .hero-stats .lab {
+
+      display: block;
+
+      font-size: .7rem;
+
+      color: var(--gris-oscuro);
+
+      text-transform: uppercase;
+
+    }
+
+
+    /* ==================================================
+       SECCIONES
+       ================================================== */
+
+    .section-head {
+
+      max-width: 700px;
+
+      margin-bottom: 50px;
+
+    }
+
+
+    .section-head h2 {
+
+      font-size: clamp(2rem,4vw,3rem);
+
+    }
+
+
+    .section-head p:not(.eyebrow) {
+
+      margin-top: 15px;
+
+      color: var(--gris-oscuro);
+
+    }
+
+
+    /* ==================================================
+       PROPIEDADES
+       ================================================== */
+
+    .servicios {
+
+      padding: 110px 0;
+
+      background: var(--negro);
+
+    }
+
+
+    .servicios-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 22px;
+
+    }
+
+
+    .servicio-card {
+
+      background: var(--negro-azul);
+
+      border: 1px solid var(--borde);
+
+      border-radius: var(--radio);
+
+      overflow: hidden;
+
+      transition: .3s;
+
+    }
+
+
+    .servicio-card:hover {
+
+      transform: translateY(-8px);
+
+      border-color: var(--verde);
+
+      box-shadow:
+
+        0 15px 40px rgba(13,63,47,.35);
+
+    }
+
+
+    .servicio-img {
+
+      height: 240px;
+
+      object-fit: cover;
+
+    }
+
+
+    .servicio-content {
+
+      padding: 30px;
+
+    }
+
+
+    .servicio-card .mono {
+
+      color: var(--verde);
+
+    }
+
+
+    .servicio-card h3 {
+
+      font-size: 1.7rem;
+
+      margin: 12px 0;
+
+    }
+
+
+    .servicio-card p {
+
+      color: var(--gris-oscuro);
+
+      font-size: .93rem;
+
+    }
+
+
+    .tag-list {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 20px;
+
+    }
+
+
+    .tag-list span {
+
+      color: var(--azul);
+
+      border: 1px solid var(--azul);
+
+      padding: 5px 9px;
+
+      border-radius: 20px;
+
+      font-family: 'JetBrains Mono', monospace;
+
+      font-size: .62rem;
+
+    }
+
+
+    .precio {
+
+      color: var(--verde) !important;
+
+      font-weight: 700;
+
+      margin-top: 18px;
+
+    }
+
+
+    /* ==================================================
+       CONSTRUCCIÓN
+       ================================================== */
+
+    .proceso {
+
+      padding: 110px 0;
+
+      background: var(--negro-azul);
+
+    }
+
+
+    .proceso-list {
+
+      display: grid;
+
+      grid-template-columns: repeat(4,1fr);
+
+      gap: 25px;
+
+    }
+
+
+    .paso {
+
+      border-top: 2px solid var(--verde);
+
+      padding-top: 20px;
+
+    }
+
+
+    .paso .mono {
+
+      color: var(--verde);
+
+    }
+
+
+    .paso h3 {
+
+      margin: 14px 0 10px;
+
+      font-size: 1.2rem;
+
+    }
+
+
+    .paso p {
+
+      color: var(--gris-oscuro);
+
+      font-size: .9rem;
+
+    }
+
+
+    /* ==================================================
+       DISEÑO 3D
+       ================================================== */
+
+    .diseno3d {
+
+      padding: 110px 0;
+
+      background: var(--azul-oscuro);
+
+    }
+
+
+    .d3-grid {
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 60px;
+
+      align-items: center;
+
+    }
+
+
+    .d3-copy h2 {
+
+      font-size: clamp(2rem,4vw,3rem);
+
+    }
+
+
+    .d3-copy p {
+
+      color: var(--gris);
+
+      margin-top: 15px;
+
+    }
+
+
+    .d3-feat {
+
+      display: flex;
+
+      gap: 15px;
+
+      margin-top: 30px;
+
+    }
+
+
+    .d3-feat div {
+
+      flex: 1;
+
+      background: var(--negro);
+
+      border: 1px solid var(--borde);
+
+      padding: 20px;
+
+      border-radius: var(--radio);
+
+    }
+
+
+    .d3-feat .mono {
+
+      color: var(--verde);
+
+    }
+
+
+    .d3-feat p {
+
+      font-size: .8rem;
+
+      color: var(--gris-oscuro);
+
+    }
+
+
+    .render-mock {
+
+      background: var(--negro);
+
+      border: 1px solid var(--verde);
+
+      padding: 18px;
+
+      border-radius: var(--radio);
+
+    }
+
+
+    .render-mock img {
+
+      height: 420px;
+
+      object-fit: cover;
+
+      border-radius: 5px;
+
+    }
+
+
+    .render-caption {
+
+      padding-top: 14px;
+
+      color: var(--verde);
+
+      font-family: 'JetBrains Mono', monospace;
+
+      font-size: .65rem;
+
+    }
+
+
+    /* ==================================================
+       RIONEGRO
+       ================================================== */
+
+    .rionegro {
+
+      padding: 110px 0;
+
+      background: var(--negro);
+
+    }
+
+
+    .rio-grid {
+
+      display: grid;
+
+      grid-template-columns: .9fr 1.1fr;
+
+      gap: 70px;
+
+    }
+
+
+    .rio-item {
+
+      display: grid;
+
+      grid-template-columns: 90px 1fr;
+
+      gap: 20px;
+
+      padding: 24px 0;
+
+      border-top: 1px solid var(--borde);
+
+    }
+
+
+    .rio-item:last-child {
+
+      border-bottom: 1px solid var(--borde);
+
+    }
+
+
+    .rio-item .mono {
+
+      color: var(--verde);
+
+    }
+
+
+    .rio-item h3 {
+
+      font-size: 1.1rem;
+
+    }
+
+
+    .rio-item p {
+
+      color: var(--gris-oscuro);
+
+      margin-top: 5px;
+
+      font-size: .9rem;
+
+    }
+
+
+    /* ==================================================
+       CONTACTO
+       ================================================== */
+
+    .contacto {
+
+      padding: 110px 0 40px;
+
+      background:
+
+        linear-gradient(
+
+          135deg,
+
+          var(--negro-azul),
+
+          var(--azul-oscuro)
+
+        );
+
+    }
+
+
+    .contacto-inner {
+
+      display: grid;
+
+      grid-template-columns: 1.2fr 1fr;
+
+      gap: 70px;
+
+    }
+
+
+    .contacto h2 {
+
+      font-size: clamp(2rem,4vw,3rem);
+
+    }
+
+
+    .contacto p.lead {
+
+      margin-top: 18px;
+
+      color: var(--gris-oscuro);
+
+    }
+
+
+    .info-box {
+
+      border-top: 2px solid var(--verde);
+
+    }
+
+
+    .info-row {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding: 15px 0;
+
+      border-bottom: 1px solid var(--borde);
+
+      font-size: .88rem;
+
+    }
+
+
+    .info-row .mono {
+
+      color: var(--verde);
+
+    }
+
+
+    /* ==================================================
+       REDES
+       ================================================== */
+
+    .redes {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 30px;
+
+    }
+
+
+    .red-social {
+
+      border: 1px solid var(--borde);
+
+      padding: 9px 13px;
+
+      border-radius: var(--radio);
+
+      color: var(--gris-oscuro);
+
+      font-size: .8rem;
+
+    }
+
+
+    .red-social:hover {
+
+      border-color: var(--verde);
+
+      color: var(--verde);
+
+    }
+
+
+    /* ==================================================
+       FOOTER
+       ================================================== */
+
+    footer {
+
+      margin-top: 70px;
+
+      padding-top: 25px;
+
+      border-top: 1px solid var(--borde);
+
+      display: flex;
+
+      justify-content: space-between;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      font-size: .75rem;
+
+      color: var(--gris-oscuro);
+
+    }
+
+
+    /* ==================================================
+       RESPONSIVE
+       ================================================== */
+
+    @media (max-width:880px) {
+
+      .nav-links {
+
+        display: none;
+
+      }
+
+      .burger {
+
+        display: block;
+
+      }
+
+      .servicios-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .proceso-list {
+
+        grid-template-columns: 1fr 1fr;
+
+      }
+
+      .d3-grid,
+      .rio-grid,
+      .contacto-inner {
+
+        grid-template-columns: 1fr;
+
+      }
+
+    }
+
+
+    @media (max-width:550px) {
+
+      .wrap {
+
+        padding: 0 20px;
+
+      }
+
+      nav {
+
+        padding: 16px 20px;
+
+      }
+
+      .hero {
+
+        min-height: 80vh;
+
+      }
+
+      .hero h1 {
+
+        font-size: 2.8rem;
+
+      }
+
+      .proceso-list {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .d3-feat {
+
+        flex-direction: column;
+
+      }
+
+      .info-row {
+
+        flex-direction: column;
+
+        gap: 5px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ==================================================
+       NAVBAR
+       ================================================== -->
+
+  <header>
+
+    <nav>
+
+      <div class="logo">
+
+        TERRA <span>PSCJ</span>
+
+      </div>
+
+
+      <div class="nav-links">
+
+        <a href="#propiedades">
+          Propiedades
+        </a>
+
+        <a href="#construccion">
+          Construcción
+        </a>
+
+        <a href="#diseno3d">
+          Diseño 3D
+        </a>
+
+        <a href="#rionegro">
+          Rionegro
+        </a>
+
+        <a href="#contacto" class="nav-cta">
+          Contacto
+        </a>
+
+      </div>
+
+
+      <button class="burger">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- ==================================================
+       PORTADA
+       ================================================== -->
+
+  <section class="hero">
+
+    <div class="wrap hero-inner">
+
+      <p class="eyebrow mono">
+        INMOBILIARIA · RIONEGRO, ANTIOQUIA
+      </p>
+
+
+      <h1>
+
+        Encuentra tu lugar,
+
+        <em>construye</em>
+
+        tu futuro.
+
+      </h1>
+
+
+      <p class="lead">
+
+        Compra y venta de casas, lotes y fincas
+        en el Oriente antioqueño, con
+        acompañamiento en construcción y
+        diseño arquitectónico 3D.
+
+      </p>
+
+
+      <div class="hero-actions">
+
+        <a
+          href="#propiedades"
+          class="btn btn-primary"
+        >
+          Ver propiedades
+        </a>
+
+
+        <a
+          href="#contacto"
+          class="btn btn-outline"
+        >
+          Contactar
+        </a>
+
+      </div>
+
+
+      <div class="hero-stats">
+
+        <div>
+
+          <span class="num">
+            03
+          </span>
+
+          <span class="lab">
+            Propiedades
+          </span>
+
+        </div>
+
+
+        <div>
+
+          <span class="num">
+            3D
+          </span>
+
+          <span class="lab">
+            Diseño
+          </span>
+
+        </div>
+
+
+        <div>
+
+          <span class="num">
+            100%
+          </span>
+
+          <span class="lab">
+            Acompañamiento
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       PROPIEDADES
+       ================================================== -->
+
+  <section
+    class="servicios"
+    id="propiedades"
+  >
+
+    <div class="wrap">
+
+
+      <div class="section-head">
+
+        <p class="eyebrow mono">
+          PROPIEDADES
+        </p>
+
+
+        <h2>
+          Encuentra el espacio ideal
+          para ti.
+        </h2>
+
+
+        <p>
+          Casas, lotes y fincas en Rionegro
+          y el Oriente antioqueño.
+        </p>
+
+      </div>
+
+
+      <div class="servicios-grid">
+
+
+        <!-- CASA -->
+
+        <div class="servicio-card">
+
+          <img
+            src="img/casas.jpg"
+            alt="Casas en venta"
+            class="servicio-img"
+          >
+
+
+          <div class="servicio-content">
+
+            <span class="mono">
+              01 · VIVIENDA
+            </span>
+
+
+            <h3>
+              Casas
+            </h3>
+
+
+            <p>
+              Casas urbanas y en conjuntos
+              cerrados, listas para habitar
+              o remodelar.
+            </p>
+
+
+            <div class="tag-list">
+
+              <span>
+                Estrenar
+              </span>
+
+              <span>
+                Remodelar
+              </span>
+
+              <span>
+                Vivienda
+              </span>
+
+            </div>
+
+
+            <p class="precio">
+              Consultar precio
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- LOTES -->
+
+        <div class="servicio-card">
+
+          <img
+            src="img/lotes.jpg"
+            alt="Lotes en venta"
+            class="servicio-img"
+          >
+
+
+          <div class="servicio-content">
+
+            <span class="mono">
+              02 · TERRENO
+            </span>
+
+
+            <h3>
+              Lotes
+            </h3>
+
+
+            <p>
+              Lotes urbanos y rurales para
+              vivienda o desarrollo de
+              proyectos.
+            </p>
+
+
+            <div class="tag-list">
+
+              <span>
+                Urbano
+              </span>
+
+              <span>
+                Rural
+              </span>
+
+              <span>
+                Proyectos
+              </span>
+
+            </div>
+
+
+            <p class="precio">
+              Consultar precio
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- FINCAS -->
+
+        <div class="servicio-card">
+
+          <img
+            src="img/fincas.jpg"
+            alt="Fincas en venta"
+            class="servicio-img"
+          >
+
+
+          <div class="servicio-content">
+
+            <span class="mono">
+              03 · CAMPO
+            </span>
+
+
+            <h3>
+              Fincas
+            </h3>
+
+
+            <p>
+              Fincas de recreo y producción
+              ubicadas en el Oriente
+              antioqueño.
+            </p>
+
+
+            <div class="tag-list">
+
+              <span>
+                Recreo
+              </span>
+
+              <span>
+                Producción
+              </span>
+
+              <span>
+                Campo
+              </span>
+
+            </div>
+
+
+            <p class="precio">
+              Consultar precio
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       CONSTRUCCIÓN
+       ================================================== -->
+
+  <section
+    class="proceso"
+    id="construccion"
+  >
+
+    <div class="wrap">
+
+
+      <div class="section-head">
+
+        <p class="eyebrow mono">
+          CONSTRUCCIÓN
+        </p>
+
+
+        <h2>
+          De la idea al proyecto construido.
+        </h2>
+
+
+        <p>
+          Te acompañamos en las diferentes
+          etapas de tu proyecto.
+        </p>
+
+      </div>
+
+
+      <div class="proceso-list">
+
+
+        <div class="paso">
+
+          <span class="mono">
+            01
+          </span>
+
+          <h3>
+            Diagnóstico
+          </h3>
+
+          <p>
+            Revisamos las características
+            y posibilidades del terreno.
+          </p>
+
+        </div>
+
+
+        <div class="paso">
+
+          <span class="mono">
+            02
+          </span>
+
+          <h3>
+            Diseño y planos
+          </h3>
+
+          <p>
+            Creamos el proyecto y sus
+            representaciones en 3D.
+          </p>
+
+        </div>
+
+
+        <div class="paso">
+
+          <span class="mono">
+            03
+          </span>
+
+          <h3>
+            Trámites
+          </h3>
+
+          <p>
+            Acompañamos la documentación
+            y los permisos necesarios.
+          </p>
+
+        </div>
+
+
+        <div class="paso">
+
+          <span class="mono">
+            04
+          </span>
+
+          <h3>
+            Construcción
+          </h3>
+
+          <p>
+            Seguimiento del proyecto hasta
+            su entrega.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       DISEÑO 3D
+       ================================================== -->
+
+  <section
+    class="diseno3d"
+    id="diseno3d"
+  >
+
+    <div class="wrap d3-grid">
+
+
+      <div class="d3-copy">
+
+        <p class="eyebrow mono">
+          DISEÑO 3D
+        </p>
+
+
+        <h2>
+          Visualiza tu proyecto antes
+          de construirlo.
+        </h2>
+
+
+        <p>
+          Transformamos tus ideas en diseños
+          3D, planos y renders para visualizar
+          el proyecto antes de iniciar.
+        </p>
+
+
+        <p>
+          Te ayudamos a tomar decisiones
+          con mayor claridad.
+        </p>
+
+
+        <div class="d3-feat">
+
+
+          <div>
+
+            <span class="mono">
+              RENDERS
+            </span>
+
+            <p>
+              Visualizaciones del proyecto,
+              interiores y exteriores.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <span class="mono">
+              DISEÑO 3D
+            </span>
+
+            <p>
+              Representaciones para visualizar
+              cada detalle.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+
+      <div class="render-mock">
+
+        <img
+          src="img/diseno3d.jpg"
+          alt="Diseño 3D de TERRA PSCJ"
+        >
+
+
+        <div class="render-caption">
+
+          TERRA PSCJ · DISEÑO 3D
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       RIONEGRO
+       ================================================== -->
+
+  <section
+    class="rionegro"
+    id="rionegro"
+  >
+
+    <div class="wrap rio-grid">
+
+
+      <div class="section-head">
+
+        <p class="eyebrow mono">
+          UBICACIÓN
+        </p>
+
+
+        <h2>
+          Rionegro y el Oriente antioqueño.
+        </h2>
+
+
+        <p>
+          Un territorio con oportunidades
+          para vivir, invertir y desarrollar
+          nuevos proyectos.
+        </p>
+
+      </div>
+
+
+      <div>
+
+
+        <div class="rio-item">
+
+          <span class="mono">
+            CLIMA
+          </span>
+
+          <div>
+
+            <h3>
+              Clima de altiplano
+            </h3>
+
+            <p>
+              Un entorno agradable para
+              vivir y disfrutar.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="rio-item">
+
+          <span class="mono">
+            VÍAS
+          </span>
+
+          <div>
+
+            <h3>
+              Conectividad
+            </h3>
+
+            <p>
+              Cercanía con Medellín y el
+              Aeropuerto José María Córdova.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="rio-item">
+
+          <span class="mono">
+            CRECIMIENTO
+          </span>
+
+          <div>
+
+            <h3>
+              Zona en desarrollo
+            </h3>
+
+            <p>
+              Crecimiento en vivienda,
+              comercio y proyectos.
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       CONTACTO
+       ================================================== -->
+
+  <section
+    class="contacto"
+    id="contacto"
+  >
+
+    <div class="wrap contacto-inner">
+
+
+      <div>
+
+        <p class="eyebrow mono">
+          CONTACTO
+        </p>
+
+
+        <h2>
+          Encuentra tu lugar.
+          Construye tu futuro.
+        </h2>
+
+
+        <p class="lead">
+          Cuéntanos qué estás buscando:
+          casa, lote, finca, construcción
+          o diseño 3D.
+        </p>
+
+
+        <div class="hero-actions">
+
+
+          <a
+            href=https://wa.me/573134499816?text=Hola%2C%20estoy%20interesado%28a%29%20en%20conocer%20las%20propiedades%20y%20servicios%20de%20TERRA%20PSCJ.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n."
+
+            target="_blank"
+            class="btn btn-primary"
+          >
+            WhatsApp
+          </a>
+
+
+        </div>
+
+
+        <div class="redes">
+
+ <a
+    href="https://www.instagram.com/terrapscjinmobiliaria/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="red-social"
+  >
+    Instagram · @terrapscjinmobiliaria
+  </a>
+
+  <a
+    href="https://www.tiktok.com/@terrapscj"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="red-social"
+  >
+    TikTok · @terrapscj
+  </a>
+
+  <a
+    href="https://www.facebook.com/share/1CSgsrxrzg/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="red-social"
+  >
+    Facebook · Terra PSCJ
+  
+  </a>
+
+</div>
+HTML
+
+        </div>
+
+      </div>
+
+
+
+      <div class="info-box">
+
+
+        <div class="info-row">
+
+          <span class="mono">
+            UBICACIÓN
+          </span>
+
+          <span>
+            Km 5, Vía Rionegro -
+            El Carmen de Viboral
+            <br>
+            Vereda Garzonas
+          </span>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span class="mono">
+            WHATSAPP
+          </span>
+
+          <span>
+            +57 313 449 9816
+          </span>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span class="mono">
+            HORARIO
+          </span>
+
+          <span>
+            Lunes a sábado
+            <br>
+            8:00 a.m. – 5:00 p.m.
+          </span>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span class="mono">
+            INSTAGRAM
+          </span>
+
+          <span>
+            Próximamente
+          </span>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span class="mono">
+            TIKTOK
+          </span>
+
+          <span>
+            Terra PSCJ Inmobiliaria
+          </span>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span class="mono">
+            FACEBOOK
+          </span>
+
+          <span>
+            Terra PSCJ Inmobiliaria
+          </span>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+    <div class="wrap">
+
+      <footer>
+
+        <span>
+          © 2026 TERRA PSCJ · Inmobiliaria
+        </span>
+
+        <span>
+          Rionegro, Antioquia, Colombia
+        </span>
+
+      </footer>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       JAVASCRIPT
+       ================================================== -->
+
+  <script>
+
+    /* MENÚ CELULAR */
+
+    const burger =
+      document.querySelector('.burger');
+
+    const navLinks =
+      document.querySelector('.nav-links');
+
+
+    burger.addEventListener('click', () => {
+
+      if (
+        navLinks.style.display === 'flex'
+      ) {
+
+        navLinks.style.display = 'none';
+
+      } else {
+
+        navLinks.style.display = 'flex';
+
+        navLinks.style.position = 'absolute';
+
+        navLinks.style.top = '65px';
+
+        navLinks.style.left = '0';
+
+        navLinks.style.right = '0';
+
+        navLinks.style.background =
+          '#0B1720';
+
+        navLinks.style.flexDirection =
+          'column';
+
+        navLinks.style.padding =
+          '25px';
+
+        navLinks.style.gap =
+          '18px';
+
+      }
+
+    });
+
+  </script>
+
+
+</body>
+
 </html>
